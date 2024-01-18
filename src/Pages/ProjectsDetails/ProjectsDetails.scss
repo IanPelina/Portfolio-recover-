@@ -1,0 +1,131 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: brightness(0.8);
+    min-height: 100vh;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    nav {
+        justify-content: flex-start;
+        padding: 2rem .5rem 1rem;
+        .links {
+            display: block;
+            margin-left: 10px;
+            li {
+                margin: 0;
+                a {
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+    .work-container  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        @media screen and (max-width: 1024px) {
+            width: 100%
+        }
+        #cover-container {
+            @media screen and (max-width: 1024px) {
+                width: 750px;
+            }
+            @media screen and (max-width: 769px) {
+                width: 95%;
+                margin: 3rem 0 0;
+            }
+        }
+        #second-container {
+            @media screen and (max-width: 1024px) {
+                width: 750px;
+                flex-direction: column;
+                align-items: center;
+            }
+            @media screen and (max-width: 769px) {
+                width: 100%;
+            }
+        }
+        .work-details {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            .practice, .acquired {
+                overflow: auto;
+            }
+            #context {
+                width: 750px;
+                &:hover > .cover {
+                    display: block;
+                }
+                .cover {
+                    display: none;
+                }
+            }
+            .work-detail {
+                display: flex;
+                flex-direction: column;
+                border-radius: 7px;
+                width: 370px;
+                height: 450px;
+                backdrop-filter: blur(10px) saturate(180%);
+                background-color: rgba(17, 25, 40, 0.5);
+                &:hover {
+                    backdrop-filter: blur(100px) saturate(180%);
+                    background-color: rgba(17, 25, 40, 0.8);
+                }
+
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+                
+                @media screen and (max-width: 769px) {
+                    width: 92%;
+                    height: 350px;      
+                }
+                h2 {
+                    text-align: center;
+                    font-family: "signika", sans-serif;
+                    color: white;
+                    font-weight: 500;
+                }
+                .acquired-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1rem;
+                    color: white;
+                    font-family: "signika", sans-serif;
+                    font-weight: 500;
+                    font-size: medium;
+                    text-align: center;
+                }
+                .acquired-container {
+                    color: #00ffc8;
+                }
+                .practice-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 30px;
+                    color: white;
+                    font-family: "signika", sans-serif;
+                    padding: 1rem;
+                }
+            }
+        }
+    }    
+}

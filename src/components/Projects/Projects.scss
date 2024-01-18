@@ -1,0 +1,45 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    text-align: center;
+    @media screen and (max-width: 769px) {
+        padding: .5rem;
+    }
+    h1 {
+        z-index: 3;
+        font-size: 4em;
+        margin-top: 0;
+        color: white;
+        text-shadow: black 1px 1px 1px;
+        font-weight: 700;
+        font-family: 'Merriweather Sans', sans-serif ;
+        @media screen and (max-width: 769px) {
+            margin-top: 1em;
+            font-size: 3em;
+        }
+        @media screen and (max-width: 375px) {
+            font-size: 2em;
+            margin-top: 1em;
+            margin-bottom: 0;
+        }
+    }
+    .projects-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 2rem 0;
+        max-width: 1400px;
+        margin: 5rem 0;
+        @media screen and (max-width: 769px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 375px) {
+            margin: 2rem 0 5rem;
+            gap: 10px;
+        }
+    }
+}

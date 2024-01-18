@@ -1,0 +1,392 @@
+@keyframes blinkCursor {
+  50% {
+    border-right: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%,
+  10% {
+    width: 0;
+  }
+  45%,
+  55% {
+    width: 6em;
+  }
+  90%,
+  100% {
+    width: min-content;
+  }
+}
+
+@keyframes disappear {
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes typeAndDelete2 {
+  0%,
+  10% {
+    width: 0;
+    opacity: 1;
+  }
+  45%,
+  55% {
+    width: 15em;
+  }
+  90%,
+  100% {
+    width: 15em;
+    opacity: 1;
+  }
+}
+
+@keyframes typeAndDelete3 {
+  0%,
+  10% {
+    opacity: 1;
+    width: 0;
+  }
+  45%,
+  55% {
+    width: 14em;
+  }
+  90%,
+  100% {
+    opacity: 1;
+    width: 14em;
+  }
+}
+
+@keyframes apparition {
+  0% {
+    width: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    width: 23em;
+    opacity: 1;
+  }
+}
+
+@keyframes typeAndDelete5 {
+  0%,
+  10% {
+    width: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  45%,
+  55% {
+    width: 37em;
+  }
+  90%,
+  100% {
+    width: 37em;
+    opacity: 1;
+  }
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(7, 0, 19);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.invisible {
+  display: none;
+}
+
+.terminal-loader {
+  background-color: rgb(7, 0, 19);
+  border: 1px white solid;
+  color: #0cddb0;
+  font-family: "Courier New", Courier, monospace;
+  padding: 1.5em 1em;
+  width: 550px;
+  height: 160px;
+  margin: 100px auto 0;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 95vw;
+  aspect-ratio: 16/9;
+    @media screen and (max-width: 769px) {
+      width: 450px;
+      height: 130px;
+      margin: 0;
+  }
+}
+
+.terminal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.7em;
+  background-color: rgb(7, 0, 19);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: .5px solid white;
+  padding: 0em 0.4em;
+  margin-top: .4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 769px) {
+    margin-top: .15em;
+    padding: 6px .5em;
+  }
+  @media screen and (max-width: 386px) {
+    height: 2em;
+    padding: 4px .15em 4px .3em;
+  }
+}
+
+.terminal-title {
+  float: left;
+  line-height: 1.5em;
+  color: #0cddb0;
+  white-space: break-spaces;
+  font-size: .9em;
+  @media screen and (max-width: 769px) {
+    font-size: 11px;
+  }
+}
+
+.error-title {
+  @media screen and (max-width: 386px) {
+    font-size: 9.5px;
+  }
+  @media screen and (max-width: 375px) {
+    white-space: break-spaces;
+  }
+}
+
+.terminal-controls {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 100%;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2em;
+  height: 1.2em;
+  margin-left: 0.4em;
+  margin-top: .2em;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    scale: 1.3;
+  }
+  @media screen and (max-width: 769px) {
+    width: 1em;
+    height: 1em;
+  }
+  @media screen and (max-width: 386px) {
+    margin: 0;
+  }
+}
+
+.maximize {
+  .close {
+    width: 50%;
+  }
+}
+
+.maximized {
+  scale: 1.3;
+  max-width: 70vw;
+}
+
+.close {
+  width: 80%;
+  height: 80%;
+}
+
+.text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+  position: absolute;
+  top: 45px;  
+  left: 35px;
+  animation: 
+    typeAndDelete 1s steps(9),
+    blinkCursor 0.5s step-end,
+    disappear 6s ease-in-out both;
+  margin-top: 1.5em;
+  @media screen and (max-width: 769px) {
+    font-size: 11px;
+  }
+  @media screen and (max-width: 375px) {
+    left: 15px;
+  }
+}
+
+.text2 {
+  position: absolute;
+  top: 65px;  
+  left: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typeAndDelete2 1s steps(24),
+    disappear 4s ease-in-out both;
+  margin-top: 1.5em;
+  animation-delay: 2s;
+  opacity: 0;
+  @media screen and (max-width: 375px) {
+    left: 25px;
+  }
+}
+
+.text3 {
+  position: absolute;
+  top: 85px;  
+  left: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typeAndDelete3 1s steps(21),
+    disappear 4s ease-in-out both;
+  margin-top: 1.5em;
+  animation-delay: 2s;
+  opacity: 0;
+  @media screen and (max-width: 375px) {
+    left: 25px;
+  }
+}
+
+
+.text4 {
+  position: absolute;
+  top: 45px;  
+  left: 35px;
+  margin-top: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: apparition 1s steps(35) forwards,
+    blinkCursor 0.5s step-end,
+    disappear 3s ease-in-out both;
+  animation-delay: 4s;
+  opacity: 0;
+  @media screen and (max-width: 769px) {
+    font-size: 11px;
+  }
+  @media screen and (max-width: 375px) {
+    left: 15px;
+    top: 50px;
+    font-size: 9px;
+  }
+}
+
+.error-text {
+  width: 90%;
+  white-space: break-spaces;
+  color: rgb(197, 45, 45);
+  position: absolute;
+  top: 45px;  
+  left: 35px;
+  margin-top: 1.5em;
+  @media screen and (max-width: 769px) {
+    top: 50px;
+    font-size: 11px;
+    left: 20px;
+  }
+  @media screen and (max-width: 386px) {
+    font-size: 10px;
+  }
+}
+
+.reborn {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 7px rgb(4, 0, 11), -3px -3px 7px rgba(25, 35, 56, 0.8);
+  height: 118px;
+  padding: 1.313rem;
+  border-radius: 5px;
+  z-index: -1;
+  margin: 100px auto 0;
+  .responses {
+    color: #0cddb0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .response {
+      margin: 1em 0;
+      &:hover {
+        scale: 1.1;
+        cursor: pointer;
+      }
+    }
+    #false {
+      color: rgb(197, 45, 45);
+    }
+  }
+}
+
+.noReloaded {
+  display: none;
+}
+
+.hideAgain {
+  display: none;
+  height: 0;
+  margin-top: 0;
+}
+
+.reloadAgain-container {
+  margin-top: 100px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .reload-icon {
+    color: #0cddb0;
+    font-size: 60px;
+    margin-bottom: 30px;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      transform: rotate(-180deg);
+    }
+  }
+  .byebye {
+    color: #0cddb0;
+    font-size: 32px;
+  }
+}
+
+.skip {
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  box-shadow: 3px 3px 7px rgb(4, 0, 11), -3px -3px 7px rgba(25, 35, 56, 0.8);
+  cursor: pointer;
+  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}

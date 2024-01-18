@@ -1,0 +1,35 @@
+.collapse-container {
+    color: white;
+    border-radius: 3px;
+    width: 81.766%;
+    box-shadow: 2px 2px 7px rgba(8, 12, 20, 0.8), -2px -2px 7px rgba(27, 38, 60, 0.8);
+    @media screen and (max-width: 769px) {
+        box-shadow: 2px 2px 5px rgba(8, 12, 20, 0.8), -2px -2px 5px rgba(27, 38, 60, 0.8);
+    }
+    @media screen and (max-width: 375) {
+        box-shadow: 1px 1px 3px rgba(8, 12, 20, 0.8), -1px -1px 3px rgba(27, 38, 60, 0.8);
+    }
+    .title {
+        display: flex;
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin-bottom: -4px;
+        align-items: baseline;
+        cursor: pointer;
+        .title-text {
+            flex: 1;
+        }
+        .actived {
+            transform: rotate(180deg);
+        }
+    }
+    .icon {
+        transition: .4s;
+        cursor: pointer;
+    }
+    .content {
+        padding: 10px;
+        background-color: #323d84;
+        border-radius: 0 0 3px 3px;
+    }
+}

@@ -1,0 +1,74 @@
+.presentation {
+   height: 80vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    @media screen and (max-width: 375px) {
+        margin-top: 3rem;
+    }
+    .presentation-content {
+        display: flex;
+        justify-content: center;
+        font-family: 'signika', sans-serif;
+        color: white;
+        z-index: 5;
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        .title-and-text {
+            margin-right: 130px;
+            padding: 1rem;
+            text-align: start;
+            @media screen and (max-width: 1024px) {
+                text-align: center;
+                margin: 0;
+            }
+            @media screen and (max-width: 375px) {
+                backdrop-filter: blur(50px) saturate(180%);
+                background-color: rgba(17, 25, 40, 0.8);
+                border-radius: 5px;
+            }
+            .Typewriter__wrapper {
+                margin: 0;
+                color: #0cddb0;
+                font-size: 22px;
+            }
+            h1 {
+                margin: 0 0 0 -8px;
+                font-size: clamp( 40px, 8vw, 100px);
+                background: linear-gradient(to right,#34075f,#21086e,#440e76);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+                font-family: 'Merriweather Sans', sans-serif ;
+                @media screen and (max-width: 1024px) {
+                    text-align: center;
+                }
+            }
+        }
+        .terminal-text {
+            margin: 0;
+            color: #8892b0;
+            font-size: 25px;
+            max-width: 550px;
+            margin-top: 20px;
+            @media screen and (max-width: 375px) {
+                font-size: 18px;
+            }
+        }
+
+    }
+    .profil-pic {
+        margin-top: 50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 4px 4px 10px #390867, -4px -4px 10px#1848b1;
+        @media screen and (max-width: 375px) {
+            margin-bottom: 50px;
+        }
+    }
+}

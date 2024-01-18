@@ -1,0 +1,190 @@
+.snip1577 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    overflow: auto;
+    margin: 10px 0;
+    min-width: 230px;
+    width: 750px;
+    color: #fff;
+    text-align: center ;
+    font-size: 16px;
+    background-color: rgba(17, 25, 40, 0.8);
+    border-radius: 7px;
+    backdrop-filter: blur(100px) saturate(180%);
+    height: 380px;
+}
+
+.snip1577 *,
+.snip1577:before,
+.snip1577:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.snip1577 img {
+    max-width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    vertical-align: top;
+    object-fit: cover;
+    @media screen and (max-width: 769px) {
+        object-fit: contain;
+    }
+}
+
+.snip1577:before,
+.snip1577:after {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    content: '';
+    background-color: #fff;
+    z-index: 1;
+    opacity: 0;
+}
+
+.snip1577:before {
+    width: 0;
+    height: 1px;
+}
+
+.snip1577:after {
+    height: 0;
+    width: 1px;
+}
+
+.snip1577 figcaption {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.snip1577 .context-title {
+    margin: 0;
+    font-size: 2em;
+    font-weight: large;
+    opacity: 0;
+}
+
+.snip1577 .context-container,
+.snip1577 a {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: normal;
+    opacity: 0;
+}
+
+.snip1577 .context-container {
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+.snip1577:hover img,
+.snip1577.hover img {
+    zoom: 1;
+    filter: alpha(opacity=20);
+    -webkit-opacity: 0.2;
+    opacity: 0.01;
+}
+
+.snip1577.hover #github-pic {
+    opacity: 1;
+}
+
+.snip1577:hover:before,
+.snip1577.hover:before,
+.snip1577:hover:after,
+.snip1577.hover:after {
+    opacity: 1;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+}
+
+.snip1577:hover:before,
+.snip1577.hover:before {
+    width: 40px;
+}
+
+.snip1577:hover:after,
+.snip1577.hover:after {
+    height: 40px;
+}
+
+.snip1577:hover .context-title,
+.snip1577.hover .context-title,
+.snip1577:hover .context-container,
+.snip1577.hover .context-container,
+.snip1577:hover .github-link,
+.snip1577.hover .github-link 
+.snip1577:hover #github-pic,
+.snip1577.hover #github-pic {
+    opacity: 1;
+}
+
+.snip1577:hover .context-title,
+.snip1577.hover .context-title {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.2s;
+}
+
+.snip1577:hover .context-container,
+.snip1577.hover .context-container {
+    -webkit-transition-delay: 0.35s;
+    transition-delay: 0.3s;
+}
+
+.snip1577:hover .github-link,
+.snip1577.hover .github-link{
+    -webkit-transition-delay: 0.40s;
+    transition-delay: 0.4s;
+}
+
+.context-title {
+    z-index: 3;
+    font-size: 3em;
+    text-shadow: 2px 2px 3px black;
+    color: white;
+    margin: 2rem 0 0 0; 
+    font-weight: 700;
+    font-family: 'Merriweather Sans', sans-serif ;
+    text-align: center;
+}
+
+.context-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    font-family: "signika", sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    height: 100%;
+    text-align: center;
+    .github-link {
+        margin-top: 30px;
+        z-index: 5;
+        width: 60px;
+        height: 60px;
+        #github-pic {
+            opacity: 0.1;
+            &:hover {
+                opacity: 1;
+                scale: 1.1;
+            }
+        }
+    }
+    p {
+        @media screen and (max-width: 375px) {
+            font-size: 10px;
+        }
+    }
+}
