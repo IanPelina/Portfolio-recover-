@@ -19,7 +19,7 @@ export default function Presentation() {
                         />
                         <h1>Ian Le Pape</h1>
                         <p className='terminal-text'>
-                            Je suis développeur Front-end débutant, passioné de programmation et de jeux vidéos.
+                            Je suis développeur Front-end débutant, passionné de programmation et de jeux vidéos.
                             <br></br>
                             J'aime découvrir de nouvelles technologies et relever toujours plus de défis.
                         </p>
