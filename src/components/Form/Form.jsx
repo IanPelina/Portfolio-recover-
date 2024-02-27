@@ -11,12 +11,17 @@ export default function Form() {
     const [email, setEmail] = useState('');
     const [area, setArea] = useState('');
     const [text, setText] = useState('Envoyer');
-    const submitButton = document.querySelector('.buttonText')
+    const [display, setDisplay] = useState(false);
+
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
 
     const messageSent = async (e) => {
         e.preventDefault();
         // Ici on vérifie l'état des champs du formulaire avant d'envoyer la requête post à l'API
-        if (name && surname && email && area) {
+        if (name && surname && isValidEmail(email) && area) {
             // Ici on attend la réponse de la requête asynchrone sendmail  
             // définie dans le fichier nodemailer.js
             const response = await api.post("/mail", {
@@ -32,10 +37,12 @@ export default function Form() {
         }
         else {
             setText('Erreur !');
+            setDisplay(true);
         }
 
         setTimeout(() => {
             setText('Envoyer');
+            setDisplay(false);
         }, 1500);
 
     }
@@ -43,7 +50,7 @@ export default function Form() {
     return (
         <div className='form-container' id='contact'>
             <h1>Contact</h1>
-            <form className="form" required>
+            <form className={`form ${display && 'noPadding'}`} required>
                 <div className="form--text">
                     <div className='form-fields'>
                         <div className='form-title'>Contact</div>
@@ -68,6 +75,9 @@ export default function Form() {
                         <button style={{ fontFamily: "'signika', sans-serif", fontWeight: '400' }} onClick={messageSent} className="submit" type='submit'>
                             <span className="buttonText">{text}</span>
                         </button>
+                        <div className='errorMsgContainer'>
+                            <div id='errorMsg' className={`${display && 'errorDisplayed' || 'errorHidden'}`} style={{color: 'white'}}>Veuillez remplir correctement tous les champs.</div>
+                        </div>
                     </div>
                 </div>
             </form>

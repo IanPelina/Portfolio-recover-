@@ -24,7 +24,7 @@
     }
     .form {
         margin: 30px;
-        padding: 2rem;
+        padding: 2rem 2rem 1rem;
         border-radius: 5px;
         width: fit-content;
         backdrop-filter: blur(10px) saturate(180%);
@@ -115,3 +115,21 @@
     }
 }
         
+.errorDisplayed {
+    display: block;
+}
+
+.errorHidden {
+    display: none;
+}
+
+.noPadding {
+    padding: 0;
+}
+
+.errorMsgContainer {
+    height: 21px;
+    @media screen and (max-width: 769px) {
+        font-size: small;
+    }
+}

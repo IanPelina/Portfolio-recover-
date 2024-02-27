@@ -27,14 +27,24 @@ app.get("/api/works/:id", (req, res) => {
 // Route pour permettre l'envoi d'email via le formulaire
 app.post("/api/mail", async (req, res) => {
   const { name, surname, email, area } = req.body;
+  const firstNameLetter = name[0]; 
+  const remainingNameLetters = name.slice(1); 
+  const firstSurnameLetter = surname[0];
+  const remainingSurnameLetters = surname.slice(1);
+  
   await sendMail({
     from: email,
     to: process.env.EMAIL_ADDRESS,
     subject: `Prise de contact (${email})`,
     html: `
-      <h1>${surname} ${name} souhaite vous contacter.</h1>
-      <h2>Message :</h2>
-      <p>${area}</p>
+      <div style="background: #140036; border-radius: 10px; padding: 15px";>
+        <div style="display: flex">
+          <h2 style="margin: 0; color: white;">${firstSurnameLetter.toUpperCase() + remainingSurnameLetters.toLowerCase()} ${firstNameLetter.toUpperCase() + remainingNameLetters.toLowerCase()}</h2>
+          <p style="margin: 7px 0 0 5px; color: white;">a pris contact via votre portfolio.</p>
+        </div>
+        <h3 style="text-decoration: underline; color: white;">Contenu du message:</h3>
+        <p style="color: white;">${area}</p>
+      </div>
     `
   });
   res.status(200).json({ message: 'Message envoyé' })
