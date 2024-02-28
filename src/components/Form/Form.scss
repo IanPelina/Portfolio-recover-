@@ -68,7 +68,9 @@
                 align-items: center;
                 gap: 10px;
                 color: white;
-                label {
+                label, textarea {
+                    font-family: 'signika', sans-serif;
+                    text-shadow: '1px 1px 1px black';
                     @media screen and (max-width: 769px) {
                         display: none;
                     }
@@ -92,9 +94,29 @@
                     border: white 1px solid;
                     background-color: white;
                     color: black;
+                    max-width: 602.94px;
                     @media screen and (max-width: 769px) {
                         width: 170px;
                         height: 50px;
+                        max-width: 182px;
+                    }
+                }
+                button {
+                    font-family: 'signika', sans-serif;
+                }
+                .errorMsgContainer {
+                    height: 21px;
+                    @media screen and (max-width: 769px) {
+                        font-size: small;
+                    }
+                    .errorMsg {
+                        color: white;
+                    }
+                    .errorDisplayed {
+                        display: block;
+                    }
+                    .errorHidden {
+                        display: none;
                     }
                 }
             }
@@ -112,24 +134,5 @@
                 }
             }
         }
-    }
-}
-        
-.errorDisplayed {
-    display: block;
-}
-
-.errorHidden {
-    display: none;
-}
-
-.noPadding {
-    padding: 0;
-}
-
-.errorMsgContainer {
-    height: 21px;
-    @media screen and (max-width: 769px) {
-        font-size: small;
     }
 }

@@ -37,7 +37,7 @@ app.post("/api/mail", async (req, res) => {
     to: process.env.EMAIL_ADDRESS,
     subject: `Prise de contact (${email})`,
     html: `
-      <div style="background: #140036; border-radius: 10px; padding: 15px";>
+      <div style="background: #140036; border-radius: 10px; padding: 15px">
         <div style="display: flex">
           <h2 style="margin: 0; color: white;">${firstSurnameLetter.toUpperCase() + remainingSurnameLetters.toLowerCase()} ${firstNameLetter.toUpperCase() + remainingNameLetters.toLowerCase()}</h2>
           <p style="margin: 7px 0 0 5px; color: white;">a pris contact via votre portfolio.</p>
