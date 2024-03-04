@@ -1,6 +1,6 @@
 # Portfolio
 
-![image](portfolioAccueil.png)
+![image](public/images/portfolioAccueil.png)
 
 ## Contexte
 Projet final de la formation, réalisation du portfolio de développeur.
@@ -44,4 +44,4 @@ Créer et publier son portfolio de développeur.
 - Déploiement du site avec Vercel
 - SEO avec Google Lighthouse une fois le site déployé 
 
-![image](loaderPortfolio.png)
+![image](public/images/loaderPortfolio.png)
