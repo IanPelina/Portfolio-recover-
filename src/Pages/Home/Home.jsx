@@ -13,7 +13,7 @@ export default function Home() {
         <div className="home-container" style={{ backgroundImage: `url(${path})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
             <Nav>
                 <ul className='links'>
-                    <li><a className='link' href='/CV-Ian_Le_Pape(2).pdf' target='_blank'>CV</a></li>
+                    <li><a className='link' href='/CV_Ian_Le_Pape.pdf' target='_blank'>CV</a></li>
                     <li><a className='link' href='#mes-projets'>Projets</a></li>
                     <li><a className='link' href="#contact">Contact</a></li>
                 </ul>
